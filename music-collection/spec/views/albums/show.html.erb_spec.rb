@@ -2,11 +2,12 @@ require 'rails_helper'
 
 RSpec.describe "albums/show", :type => :view do
   before(:each) do
+    artist = Artist.create(name: "Artist", country: "Artist Country")
     @album = assign(:album, Album.create!(
       :title => "Title",
       :description => "MyText",
       :cover => "Cover",
-      :artist => "Artist",
+      :artist_id => artist.id,
       :genre => "Genre"
     ))
   end

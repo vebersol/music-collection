@@ -11,15 +11,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140917125740) do
+ActiveRecord::Schema.define(version: 20140918132800) do
 
   create_table "albums", force: true do |t|
     t.string   "title"
     t.text     "description"
     t.string   "cover"
     t.date     "released"
-    t.string   "artist"
     t.string   "genre"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "artist_id"
+  end
+
+  add_index "albums", ["artist_id"], name: "index_albums_on_artist_id", using: :btree
+
+  create_table "artists", force: true do |t|
+    t.string   "name"
+    t.string   "country"
+    t.string   "picture"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -67,6 +67,11 @@ Visit https://github.com/colszowka/simplecov
 ## 2.3 Generate Scaffolds
 
     $ rails g scaffold Album title:string description:text cover:string released:date artist:string genre:string
+
+    $  rails g scaffold Artist name:string country:string picture:string
+
+    $ rails g migration AddArtistReferenceToAlbum
+
     $ rake db:migrate
     $ rake db:migrate RAILS_ENV=test
 

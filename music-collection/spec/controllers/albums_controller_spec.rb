@@ -28,7 +28,7 @@ RSpec.describe AlbumsController, :type => :controller do
       title: "Album title",
       description: "Album description",
       released: "1999-01-31",
-      artist: "Artist name",
+      artist_id: 1,
       genre: "Heavy Metal"
     }
   }
@@ -38,7 +38,7 @@ RSpec.describe AlbumsController, :type => :controller do
       title: "",
       description: "Album description",
       released: "1999-01-31",
-      artist: "",
+      artist_id: 1,
       genre: "Heavy Metal"
     }
   }
@@ -119,7 +119,7 @@ RSpec.describe AlbumsController, :type => :controller do
           title: "Album title updated",
           description: "Album description updated",
           released: "1999-01-12",
-          artist: "Artist name updated",
+          artist_id: 1,
           genre: "Rock"
         }
       }

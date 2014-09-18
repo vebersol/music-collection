@@ -28,8 +28,8 @@
     <%= f.date_select :released %>
   </div>
   <div class="field">
-    <%= f.label :artist %><br>
-    <%= f.text_field :artist %>
+    <%= f.label :artist_id %><br>
+    <%= f.select :artist_id, Artist.all.collect {|a| [ a.name, a.id ] }, {include_blank: true} %>
   </div>
   <div class="field">
     <%= f.label :genre %><br>
