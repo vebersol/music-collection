@@ -58,6 +58,12 @@
     $ bundle
     $ rails generate rspec:install
 
+## 2.2.1 Install simplecov
+
+Simplecov generates test coverage reports. Very usefull if you want to make sure your code has a good coverage.
+
+Visit https://github.com/colszowka/simplecov
+
 ## 2.3 Generate Scaffolds
 
     $ rails g scaffold Album title:string description:text cover:string released:date artist:string genre:string
