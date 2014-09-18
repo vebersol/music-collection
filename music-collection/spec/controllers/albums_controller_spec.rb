@@ -24,11 +24,23 @@ RSpec.describe AlbumsController, :type => :controller do
   # Album. As you add validations to Album, be sure to
   # adjust the attributes here as well.
   let(:valid_attributes) {
-    skip("Add a hash of attributes valid for your model")
+    {
+      title: "Album title",
+      description: "Album description",
+      released: "1999-01-31",
+      artist: "Artist name",
+      genre: "Heavy Metal"
+    }
   }
 
   let(:invalid_attributes) {
-    skip("Add a hash of attributes invalid for your model")
+    {
+      title: "",
+      description: "Album description",
+      released: "1999-01-31",
+      artist: "",
+      genre: "Heavy Metal"
+    }
   }
 
   # This should return the minimal set of values that should be in the session
@@ -103,14 +115,20 @@ RSpec.describe AlbumsController, :type => :controller do
   describe "PUT update" do
     describe "with valid params" do
       let(:new_attributes) {
-        skip("Add a hash of attributes valid for your model")
+        {
+          title: "Album title updated",
+          description: "Album description updated",
+          released: "1999-01-12",
+          artist: "Artist name updated",
+          genre: "Rock"
+        }
       }
 
       it "updates the requested album" do
         album = Album.create! valid_attributes
         put :update, {:id => album.to_param, :album => new_attributes}, valid_session
         album.reload
-        skip("Add assertions for updated state")
+        is_expected.to redirect_to(album)
       end
 
       it "assigns the requested album as @album" do
